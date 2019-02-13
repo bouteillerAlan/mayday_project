@@ -1,0 +1,13 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+home:
+  path: /
+  controller: App\Controller\HomeController::index
+
+blog.unique:
+  path: /blog/{slug}-{id}
+  controller: App\Controller\BlogController::unique
+  requirements:
+    slug: '[a-z 0-9 \-]*'

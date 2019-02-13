@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Damion|Permanent+Marker|Roboto|Share+Tech|VT323|Barlow');
+/*font-family: 'Damion', cursive;*/
+/*font-family: 'Permanent Marker', cursive;*/
+/*font-family: 'Roboto', sans-serif;*/
+/*font-family: 'Share Tech', sans-serif;*/
+
+/*
+* GENERAL VARIABLE AND CLASS
+*/
+:root {
+    --primary-background : #262626;
+    --second-background : #ecf0f1;
+    --primary-text : #ecf0f1;
+    --second-text : #262626;
+    --yellow : #ffeb3b;
+    --red : #ff1100;
+    --blue-neon : #5AE8FD;
+    --pink-neon : #FD5AE8;
+    --green-neon : #29FCA5;
+}
+
+body {
+    background-color : var(--primary-background);
+    font-family: 'Roboto', cursive;
+}
+
+p, h1, h2, h3, h4, h5, ul, li, a {
+    color : var(--primary-text);
+}
+
+.code {
+    font-family: 'Barlow', sans-serif;
+    font-size : 30px;
+}
+
+.pinkP {
+    color : var(--pink-neon);
+}
+
+.greenP {
+    color : var(--green-neon);
+}
+
+.blueP {
+    color : var(--blue-neon);
+}
+
+.yellowP {
+    color : var(--yellow);
+}
+
+.fullWidth {
+    width : 100%;
+}
+
+.fullHeight {
+    height : 100%;
+}
+
+.footer {
+    padding-top : 10vh;
+}
+
+/* Works in Safari */
+::selection {
+    background-color: var(--green-neon);
+}
+
+::-moz-selection {
+    background-color: var(--green-neon);
+}
+
+.show {
+    border-bottom : dashed 2px var(--yellow);
+}
+
+.backGreen {
+    background-color : var(--green-neon);
+    color : var(--second-text);
+}
+
+/*
+* ANIMATIONS
+*/
+/*@Text hero*/
+.blur:hover {
+  animation : blur 0.3s infinite;
+  cursor : pointer;
+}
+
+@keyframes blur {
+  0% {text-shadow : 2px 2px var(--red);}
+  25% {text-shadow : 3px -3px var(--yellow);}
+  50% {text-shadow : -2px -1px var(--red);}
+  75% {text-shadow : 2px 2px var(--yellow);}
+  100% {text-shadow : -2px -1px var(--red);}
+}
+
+/*@Brand name*/
+.blink {
+    animation : blink 0.9s infinite;
+}
+
+@keyframes blink {
+    0% {color : transparent;}
+    100% {color : var(--green-neon);}
+}
+
+/*@link history*/
+.show:hover {
+    cursor : pointer;
+    animation : dot 0.5s infinite;
+}
+
+@keyframes dot {
+    100% {border-bottom : dotted 2px var(--yellow);}
+}
+
+/*
+* CONTENT CLASS
+*/
+.hero {
+    height : 91vh;
+    padding-top : 1em !important;
+    font-family: 'Share Tech', sans-serif;
+}
+
+.hero h1 {
+    font-size : 60px;
+    margin-top : 0 !important;
+}
+
+.hero h2 {
+    font-size : 55px;
+}
+
+.hero blockquote {
+    color : var(--primary-text);
+    font-size : 20px;
+}
+
+.hero blockquote span:nth-child(1) {
+    color : var(--pink-neon);
+}
+
+.hero blockquote span:nth-child(2) {
+    color : var(--green-neon);
+}
+
+.hero blockquote span:nth-child(3) {
+    color : var(--blue-neon);
+}
+
+.hero blockquote span:nth-child(4) {
+    color : var(--yellow);
+}
+
+.actu {
+    padding-top : 95px !important;
+    padding-bottom : 95px !important;
+}
+
+.actu p {
+    font-size : 18px;
+}
+
+.actu i {
+    background-color : var(--green-neon);
+    color : var(--second-text);
+}
+
+.actu a {
+    color : var(--second-text) !important;
+}
+
+.title {
+    margin-top : 39px;
+}
+
+.title-mobile {
+    margin-top : 0;
+}
+
+.drop p:nth-child(1) {
+    margin-bottom : 0 !important;
+}
+
+.drop p:nth-child(2) {
+    margin-top : 0 !important;
+}
+
+.paramBlog {
+    padding-top: 15px !important;
+}
+
+.content {
+    padding-top: 30px !important;
+}

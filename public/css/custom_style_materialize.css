@@ -1,0 +1,111 @@
+/*
+* WARNING
+* READ style_gen.css if you need to know var()
+*/
+
+
+/*
+* NAV
+*/
+nav {
+    background-color: var(--primary-background);
+}
+
+.active, nav li:hover {
+    background-color : var(--green-neon) !important;
+}
+
+nav a {
+    color : var(--green-neon) !important;
+}
+
+.active, nav a:hover {
+    color: var(--second-text) !important;
+}
+
+.dropdown-content {
+    top: 64px !important;
+    background-color: var(--primary-background);
+}
+
+.dropdown-content li:hover {
+    background-color : var(--green-neon);
+}
+
+.dropdown-content li a:hover {
+    color: var(--second-text) !important;
+}
+
+.brand-logo {
+    font-family: 'VT323', cursive;
+    color : var(--green-neon);
+}
+
+.brand-logo:hover {
+    color : var(--green-neon)  !important;
+}
+
+#logo {
+    padding: 5px;
+    padding-left: 15px;
+}
+
+.text-logo {
+    float: right;
+    margin: 0;
+}
+
+/*
+* BLOCKQUOTE
+*/
+blockquote {
+    border-left: 5px solid var(--primary-text);
+}
+
+/*
+* BADGE
+*/
+.home {
+    float: unset !important;
+    border: solid 1px white;
+    background-color: transparent !important;
+}
+
+.art {
+    background-color: var(--green-neon)!important;
+    color: var(--second-text)!important;
+    border: 0;
+}
+
+/*
+* FORM
+*/
+label[class=active] {
+    background-color : var(--primary-background) !important;
+    color : var(--green-neon) !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid var(--blue-neon) !important;
+  box-shadow: 0 1px 0 0 var(--blue-neon) !important;
+}
+
+/* valid color */
+.input-field input[type=text].valid, textarea.materialize-textarea.valid, .input-field input[type=email].valid {
+  border-bottom: 1px solid var(--green-neon) !important;
+  box-shadow: 0 1px 0 0 var(--green-neon) !important;
+}
+
+/* invalid color */
+.input-field input[type=text].invalid, textarea.materialize-textarea.invalid, .input-field input[type=email].invalid {
+  border-bottom: 1px solid var(--pink-neon) !important;
+  box-shadow: 0 1px 0 0 var(--pink-neon) !important;
+}
+
+/*
+* DIVIDER
+*/
+.pink-p {
+    background-color: var(--pink-neon) !important;
+}
