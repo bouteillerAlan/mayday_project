@@ -40,6 +40,7 @@ class AdminBlogController extends AbstractController {
     {
         $form = $this->createForm(BlogContentType::class, $entity);
 
+
         return $this->render('admin\admin.unique.html.twig', [
             'result' => $entity,
             'form' => $form->createView()

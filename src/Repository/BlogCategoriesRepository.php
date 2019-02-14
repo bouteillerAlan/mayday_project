@@ -19,6 +19,13 @@ class BlogCategoriesRepository extends ServiceEntityRepository
         parent::__construct($registry, BlogCategories::class);
     }
 
+    public function getArrayCategories () :array
+    {
+        return $this->createQueryBuilder('c')
+            ->getQuery()
+            ->getArrayResult();
+    }
+
     // /**
     //  * @return BlogCategories[] Returns an array of BlogCategories objects
     //  */

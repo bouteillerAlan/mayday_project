@@ -2,6 +2,11 @@
 
 {% block title %}Admin - {{ result.slug }}{% endblock %}
 
+{% block stylesheets %}
+    <!-- @personal theme for ckeditor -->
+    <link type="text/css" rel="stylesheet" href="../ckeditor5-build-classic/theme/theme.css"/>
+{% endblock %}
+
 {% block body %}
     <div class="row container">
 
@@ -30,4 +35,20 @@
         </div>
 
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <!--@ckeditor-->
+    <script src="../ckeditor5-build-classic/ckeditor.js"></script>
+    <!--@replace the textarea with ckeditor-->
+    <script type="text/javascript">
+        ClassicEditor
+            .create( document.querySelector( '.materialize-textarea' ) )
+            .then( editor => {
+                console.log( editor );
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 {% endblock %}
