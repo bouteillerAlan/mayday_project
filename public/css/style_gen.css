@@ -196,3 +196,7 @@ p, h1, h2, h3, h4, h5, ul, li, a, table {
 .content {
     padding-top: 30px !important;
 }
+
+.cke_wysiwyg_frame, .cke_wysiwyg_div {
+    background-color: #262626 !important;
+}
