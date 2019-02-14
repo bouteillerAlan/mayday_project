@@ -4,6 +4,8 @@
  *
  */
 
+use App\Entity\BlogContent;
+use App\Form\BlogContentType;
 use App\Repository\BlogContentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,7 +34,16 @@ class AdminBlogController extends AbstractController {
         return $this->render('admin\admin.home.html.twig', [
             'result' => $result
         ]);
+    }
 
+    public function unique (BlogContent $entity) :Response
+    {
+        $form = $this->createForm(BlogContentType::class, $entity);
+
+        return $this->render('admin\admin.unique.html.twig', [
+            'result' => $entity,
+            'form' => $form->createView()
+        ]);
     }
 
 }
