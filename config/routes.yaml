@@ -11,3 +11,7 @@ blog.unique:
   controller: App\Controller\BlogController::unique
   requirements:
     slug: '[a-z 0-9 \-]*'
+
+admin:
+  path: /admin
+  controller: App\Controller\Admin\AdminBlogController::index
