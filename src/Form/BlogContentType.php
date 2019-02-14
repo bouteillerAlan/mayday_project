@@ -14,7 +14,6 @@ class BlogContentType extends AbstractType
         $builder
             ->add('id_cat')
             ->add('status')
-            ->add('created_at')
             ->add('title')
             ->add('content')
             ->add('author')
@@ -25,6 +24,7 @@ class BlogContentType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => BlogContent::class,
+            'translation_domain' => 'forms'
         ]);
     }
 }

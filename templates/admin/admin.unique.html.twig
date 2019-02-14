@@ -4,11 +4,26 @@
 
 {% block body %}
     <div class="row container">
-        <div class="col s12 center-align">
-            <h1>Vous modifiez l'entrée de blog n°{{ result.id }}</h1>
-        </div>
 
         <div class="col s12">
+            <table class="centered">
+                <thead>
+                    <tr>
+                        <th>Modification de : {{ result.title }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Id :</td><td>{{ result.id }}</td>
+                        <td>Status :</td><td>{{ result.status }}</td>
+                        <td>Slug :</td><td>{{ result.slug }}</td>
+                        <td>Création :</td><td>{{ result.date }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col s12 content">
             {{ form_start(form) }}
                 {{ form_rest(form) }}
             {{ form_end(form) }}
