@@ -16,12 +16,21 @@ admin:
   path: /admin
   controller: App\Controller\Admin\AdminBlogController::index
 
-admin.unique:
-  path: /admin/modif-{slug}-{id}
-  controller: App\Controller\Admin\AdminBlogController::unique
-  requirements:
-    slug: '[a-z 0-9 \-]*'
-
-admin.new:
+admin.unique.new:
   path: /admin/new-blog-entry
   controller: App\Controller\Admin\AdminBlogController::new
+
+admin.unique.edit:
+  path: /admin/modif-{slug}-{id}
+  controller: App\Controller\Admin\AdminBlogController::edit
+  requirements:
+    slug: '[a-z 0-9 \-]*'
+  methods: [GET, POST]
+
+admin.unique.delete:
+  path: /admin/modif-{slug}-{id}
+  controller: App\Controller\Admin\AdminBlogController::delete
+  requirements:
+    slug: '[a-z 0-9 \-]*'
+  methods: [DELETE]
+

@@ -27,6 +27,22 @@
 
 {% block body %}
     <div class="row container">
+        <div class="col s12 messages-top">
+            {% for message in app.flashes('success') %}
+                <div class="col s12 green flash-card">
+                    <p class="valign-wrapper">
+                        <i class="material-icons">layers</i>{{ message }}
+                    </p>
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('error') %}
+                <div class="col s12 red flash-card">
+                    <p class="valign-wrapper">
+                        <i class="material-icons">layers_clear</i>{{ message }}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
         <div class="col s12">
             <table class="highlight">
                 <thead>
@@ -34,19 +50,26 @@
                         <th>Name</th>
                         <th>Date de création</th>
                         <th>Status</th>
-                        <th><a class="waves-effect waves-light btn-small" href="{{ path('admin.new') }}"><i class="material-icons left">add_to_photos</i>Nouveau</a></th>
+                        <th><a href="{{ path('admin.unique.new') }}" class="waves-effect waves-light btn-small">Nouveau<i class="material-icons left">add_to_photos</i></a></th>
+                        <th rowspan="2"></th>
                     </tr>
                 </thead>
 
                 <tbody>
                     {% for data in result %}
                     <tr>
-                        <td>{{ data.title }}</td>
+                        <td><a href="{{ path('blog.unique', {id: data.id, slug: data.slug}) }}" target="_blank">{{ data.title }}</a></td>
                         <td>{{ data.date }}</td>
                         <td>{{ data.status }}</td>
                         <td>
-                            <a class="waves-effect waves-light btn-small green" href="{{ path('admin.unique', {id: data.id, slug: data.slug}) }}"><i class="material-icons left">burst_mode</i>Modifier</a>
-                            <a class="waves-effect waves-light btn-small red" href="#"><i class="material-icons left">backspace</i>Supprimer</a>
+                            <a href="{{ path('admin.unique.edit', {id: data.id, slug: data.slug}) }}" class="waves-effect waves-light btn-small green">Modifier<i class="material-icons left">burst_mode</i></a>
+                        </td>
+                        <td>
+                            <form method="post" action="{{ path('admin.unique.delete', {id: data.id, slug: data.slug}) }}" onsubmit="return confirm('Etes-vous sur de vouloir supprimer l\'article {{data.slug}}')">
+                                <input type="hidden" name="_method" value="delete">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete'~data.slug~data.id) }}">
+                                <button class="btn waves-effect waves-light btn-small red">Supprimer<i class="material-icons left">backspace</i></button>
+                            </form>
                         </td>
                     </tr>
                     {% endfor %}

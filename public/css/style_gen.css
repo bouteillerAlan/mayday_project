@@ -204,6 +204,10 @@ p, h1, h2, h3, h4, h5, ul, li, a, table {
     padding-top: 30px !important;
 }
 
-.header-info {
+.header-info, .messages-top {
     margin-top: 30px;
+}
+
+.flash-card {
+    margin: 15px;
 }
