@@ -39,7 +39,6 @@ class AdminBlogController extends AbstractController {
     public function unique (BlogContent $entity) :Response
     {
         $form = $this->createForm(BlogContentType::class, $entity);
-
         return $this->render('admin\admin.unique.html.twig', [
             'result' => $entity,
             'form' => $form->createView()

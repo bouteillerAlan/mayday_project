@@ -32,7 +32,9 @@ CKEDITOR.editorConfig = function( config ) {
 	// Dialog windows are also simplified.
 	config.removeDialogTabs = 'link:advanced';
 
-	config.allowedContent = 'pre[*]{*}(*)';
+	// Allow content
+	config.allowedContent = true;
+	config.extraAllowedContent = '*(*);*{*};*[*];pre(*){*}[*];code(*){*}[*];span(*){*}[*]';
 
 	// PBCKCODE CUSTOMIZATION
 	config.pbckcode = {
@@ -98,6 +100,6 @@ CKEDITOR.editorConfig = function( config ) {
 		// Tab indentation (in spaces)
 		tab_size: '4'
 	};
-
+	config.codeSnippet_theme = 'dracula';
 
 };

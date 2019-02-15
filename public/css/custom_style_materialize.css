@@ -109,3 +109,10 @@ label[class=active] {
 .pink-p {
     background-color: var(--pink-neon) !important;
 }
+
+/*
+* TABLE
+*/
+tr {
+  border-color: var(--second-background);
+}
