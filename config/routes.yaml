@@ -21,3 +21,7 @@ admin.unique:
   controller: App\Controller\Admin\AdminBlogController::unique
   requirements:
     slug: '[a-z 0-9 \-]*'
+
+admin.new:
+  path: /admin/new-blog-entry
+  controller: App\Controller\Admin\AdminBlogController::new

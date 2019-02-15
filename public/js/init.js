@@ -61,3 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Tabs.init(elems);
 });
 
+//@tooltips
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(elems);
+});
+

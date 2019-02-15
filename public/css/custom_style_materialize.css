@@ -11,7 +11,7 @@ nav {
     background-color: var(--primary-background);
 }
 
-.active, nav li:hover {
+a[class=active], nav li:hover {
     background-color : var(--green-neon) !important;
 }
 
@@ -19,7 +19,7 @@ nav a {
     color : var(--green-neon) !important;
 }
 
-.active, nav a:hover {
+a[class=active], nav a:hover {
     color: var(--second-text) !important;
 }
 
@@ -80,7 +80,7 @@ blockquote {
 /*
 * FORM
 */
-label[class=active] {
+label[class*=active], label[class*=required] {
     background-color : var(--primary-background) !important;
     color : var(--green-neon) !important;
 }
@@ -108,6 +108,10 @@ label[class=active] {
 */
 .pink-p {
     background-color: var(--pink-neon) !important;
+}
+
+.divider-bottom {
+    margin-top : 15px;
 }
 
 /*

@@ -10,32 +10,37 @@
 {% block body %}
     <div class="row container">
 
-        <div class="col s12">
-            <table class="centered">
-                <thead>
-                    <tr>
-                        <th>Modification de : {{ result.title }}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Id :</td><td>{{ result.id }}</td>
-                        <td>Status :</td><td>{{ result.status }}</td>
-                        <td>Slug :</td><td>{{ result.slug }}</td>
-                        <td>Création :</td><td>{{ result.date }}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="col s12 header-info">
+                <div class="col s12 divider pink-p"></div>
+
+                <div class="col s12 right-align paramBlog">
+                    <span class="badge art tooltipped" data-position="bottom" data-tooltip="Identifiant">{{ result.id }}</span>
+                    <span class="badge art tooltipped" data-position="bottom" data-tooltip="Status">{% if result.status %}En ligne{% else %}Caché{% endif %}</span>
+                    <span class="badge art tooltipped" data-position="bottom" data-tooltip="Slug">{{ result.slug }}</span>
+                    <span class="badge art tooltipped" data-position="bottom" data-tooltip="Création">{{ result.date }}</span>
+                </div>
+
+                <div class="col s12 divider pink-p divider-bottom"></div>
         </div>
 
         <div class="col s12 content">
             {{ form_start(form) }}
 
-                <div class="col s6">{{ form_row(form.id_cat) }}</div>
-                <div class="col s6">{{ form_row(form.status) }}</div>
-                <div class="col s6">{{ form_row(form.title) }}</div>
-                <div class="col s6">{{ form_row(form.author) }}</div>
+                <div class="col m6 s12">{{ form_row(form.id_cat) }}</div>
+                <div class="col m6 s12">{{ form_row(form.author) }}</div>
+                <div class="col s12">{{ form_row(form.title) }}</div>
                 <div id="editor" class="col s12">{{ form_row(form.content) }}</div>
+
+                <div class="col s12 divider pink-p divider-bottom"></div>
+
+                <div class="col s12 paramBlog">
+                    <div class="">{{ form_row(form.status) }}</div>
+                    <div class="">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Enregistrer
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
 
             {{ form_end(form) }}
         </div>

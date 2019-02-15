@@ -34,7 +34,7 @@
                         <th>Name</th>
                         <th>Date de création</th>
                         <th>Status</th>
-                        <th>Modification</th>
+                        <th><a class="waves-effect waves-light btn-small" href="{{ path('admin.new') }}"><i class="material-icons left">add_to_photos</i>Nouveau</a></th>
                     </tr>
                 </thead>
 
@@ -45,8 +45,8 @@
                         <td>{{ data.date }}</td>
                         <td>{{ data.status }}</td>
                         <td>
-                            <a class="waves-effect waves-light btn-small" href="{{ path('admin.unique', {id: data.id, slug: data.slug}) }}"><i class="material-icons left">burst_mode</i>Modifier</a>
-                            <a class="waves-effect waves-light btn-small" href="#"><i class="material-icons left">backspace</i>Supprimer</a>
+                            <a class="waves-effect waves-light btn-small green" href="{{ path('admin.unique', {id: data.id, slug: data.slug}) }}"><i class="material-icons left">burst_mode</i>Modifier</a>
+                            <a class="waves-effect waves-light btn-small red" href="#"><i class="material-icons left">backspace</i>Supprimer</a>
                         </td>
                     </tr>
                     {% endfor %}

@@ -51,6 +51,16 @@ class BlogContent
     private $author;
 
     /**
+     * BlogContent constructor.
+     */
+    public function __construct ()
+    {
+        $s = date('Y-m-d H:i:s'); //trow string 2001-03-10 17:16:18 (sql DATETIME format)
+        $date = \DateTime::createFromFormat('Y-m-d H:i:s',$s); //return a object(DateTime)
+        $this->created_at = $date;
+    }
+
+    /**
      * @return string the slug of title
      */
     public function getSlug() :string
