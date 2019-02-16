@@ -3,9 +3,9 @@
 {% block form_row -%}
     <div class="{% if (not compound or force_error|default(false)) and not valid %} has-error{% endif %}">
         <div class="input-field">
-            {{- form_widget(form) -}}
             {{- form_label(form) -}}
-            {{- form_errors(form) -}}
+            {{- form_widget(form) -}}
+            <span class="helper-text" data-error="{{ form_errors(form) }}"></span>
         </div>
     </div>
 {%- endblock form_row %}
@@ -95,11 +95,9 @@
 
 {%- block form_errors -%}
     {%- if errors|length > 0 -%}
-        <ul class="elsan-back-error">
             {%- for error in errors -%}
-                <li class="elsan-required">{{ error.message }}</li>
+                {{ error.message }}
             {%- endfor -%}
-        </ul>
     {%- endif -%}
 {%- endblock form_errors -%}
 
