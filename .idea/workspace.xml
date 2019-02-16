@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7ec2ae4-d313-4f22-a016-f0e3b7c03ff7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/bdd.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/admin.new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Resources/views/Form/materialize_layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Resources/views/Form/materialize_layout.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/symfony/twig-bridge/Resources/views/Form/form_div_layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="369" column="35" selection-start-line="369" selection-start-column="35" selection-end-line="369" selection-end-column="35" />
+            <state relative-caret-position="727">
+              <caret line="284" column="17" selection-start-line="260" selection-start-column="4" selection-end-line="284" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -117,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vendor/symfony/twig-bridge/Resources/views/Form/materialize_layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+            <state relative-caret-position="272">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -136,8 +133,11 @@
       <find>margin:</find>
       <find>textarea</find>
       <find>text</find>
-      <find>form_errors</find>
       <find>errors</find>
+      <find>form_widget_simple</find>
+      <find>form_errors</find>
+      <find>form_widget</find>
+      <find>form_label</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -444,16 +444,15 @@
       <workItem from="1550136936345" duration="56981000" />
       <workItem from="1550254513594" duration="11130000" />
       <workItem from="1550323505825" duration="1237000" />
-      <workItem from="1550327584358" duration="8422000" />
+      <workItem from="1550327584358" duration="14059000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97914000" />
+    <option name="totallyTimeSpent" value="103551000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="2576" height="1426" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1764706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -727,15 +726,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/twig-bridge/Resources/views/Form/form_div_layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="369" column="35" selection-start-line="369" selection-start-column="35" selection-end-line="369" selection-end-column="35" />
+        <state relative-caret-position="727">
+          <caret line="284" column="17" selection-start-line="260" selection-start-column="4" selection-end-line="284" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/twig-bridge/Resources/views/Form/materialize_layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        <state relative-caret-position="272">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
         </state>
       </provider>
     </entry>
