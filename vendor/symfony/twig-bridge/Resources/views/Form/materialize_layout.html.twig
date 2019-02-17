@@ -36,10 +36,13 @@
 {# @input #}
 {% block form_widget_simple %}
     {% if type is not defined or type not in ['file', 'range', 'hidden'] %}
+        {% set attr = attr|merge({class: (attr.class|default('validate'))|trim}) %}
         {% if prefix is defined %}
             <i class="material-icons prefix">{{ prefix }}</i>
         {% endif %}
-        {% set attr = attr|merge({class: (attr.class|default('validate'))|trim}) %}
+        {% if autocomplete is defined and autocomplete == 'true' %}
+            {% set attr = attr|merge({class: (attr.class|default('') ~ ' autocomplete')|trim}) %}
+        {% endif %}
         {% if errors|length > 0 %}
             {% set attr = attr|merge({class: (attr.class|default('') ~ ' invalid')|trim}) %}
         {% endif %}

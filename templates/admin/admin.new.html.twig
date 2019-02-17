@@ -24,7 +24,7 @@
             {{ form_start(form) }}
 
             <div class="col m6 s12">{{ form_row(form.id_cat, {'type': 'range', 'attr': {'min': '0', 'max': '10'}}) }}</div>
-            <div class="col m6 s12">{{ form_row(form.author) }}</div>
+            <div class="col m6 s12">{{ form_row(form.author, {'autocomplete': 'false'}) }}</div>
             <div class="col s12">{{ form_row(form.title) }}</div>
             <div id="editor" class="col s12">{{ form_row(form.content, {'label': false}) }}</div>
 
