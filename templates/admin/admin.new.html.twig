@@ -23,16 +23,16 @@
         <div class="col s12 content">
             {{ form_start(form) }}
 
-            <div class="col m6 s12">{{ form_row(form.id_cat) }}</div>
+            <div class="col m6 s12">{{ form_row(form.id_cat, {'type': 'range', 'attr': {'min': '0', 'max': '10'}}) }}</div>
             <div class="col m6 s12">{{ form_row(form.author) }}</div>
             <div class="col s12">{{ form_row(form.title) }}</div>
-            <div id="editor" class="col s12">{{ form_row(form.content) }}</div>
+            <div id="editor" class="col s12">{{ form_row(form.content, {'label': false}) }}</div>
 
             <div class="col s12 divider pink-p divider-bottom"></div>
 
             <div class="col s12 paramBlog">
-                <div class="">{{ form_row(form.status) }}</div>
-                <div class="">
+                <div>{{ form_row(form.status, {'type': 'radio'}) }}</div>
+                <div>
                     <button class="btn waves-effect waves-light" type="submit" name="action">Enregistrer
                         <i class="material-icons right">send</i>
                     </button>
@@ -48,7 +48,7 @@
 {% block javascripts %}
     <!--@replace the textarea with ckeditor-->
     <script>
-        //$editor = document.querySelector( '.materialize-textarea' );
-        //CKEDITOR.replace($editor);
+        $editor = document.querySelector( '.materialize-textarea' );
+        CKEDITOR.replace($editor);
     </script>
 {% endblock %}
