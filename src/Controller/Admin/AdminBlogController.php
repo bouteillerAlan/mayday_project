@@ -61,7 +61,6 @@ class AdminBlogController extends AbstractController {
             return $this->redirectToRoute('admin');
         }
         return $this->render('admin\admin.new.html.twig', [
-            'result' => $entity,
             'form' => $form->createView()
         ]);
     }
@@ -100,7 +99,7 @@ class AdminBlogController extends AbstractController {
             $this->em->flush();
             $this->addFlash('success', 'Vous avez bien supprimé l\'entrée "'.$entity->getTitle().'"');
         } elseif (!$token) {
-            $this->addFlash('error', 'Hu ho! I made a mistake ¯\_(ツ)_/¯');
+            $this->addFlash('error', 'Hu ho! I made a mistake with the token ¯\_(ツ)_/¯');
         }
         return $this->redirectToRoute('admin');
     }

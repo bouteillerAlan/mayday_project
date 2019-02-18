@@ -1,7 +1,4 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
-
+# front
 home:
   path: /
   controller: App\Controller\HomeController::index
@@ -12,10 +9,12 @@ blog.unique:
   requirements:
     slug: '[a-z 0-9 \-]*'
 
+# back
 admin:
   path: /admin
   controller: App\Controller\Admin\AdminBlogController::index
 
+# blog
 admin.unique.new:
   path: /admin/new-blog-entry
   controller: App\Controller\Admin\AdminBlogController::new
@@ -34,3 +33,24 @@ admin.unique.delete:
     slug: '[a-z 0-9 \-]*'
   methods: [DELETE]
 
+# user
+admin.user:
+  path: /admin/user
+  controller: App\Controller\Admin\AdminUserController::index
+
+admin.user.new:
+  path: /admin/new-user-entry
+  controller: App\Controller\Admin\AdminUserController::new
+
+admin.user.delete:
+  path: /admin/modif-{id}
+  controller: App\Controller\Admin\AdminUserController::delete
+  methods: [DELETE]
+
+# authenticate
+login:
+  path: /login
+  controller: App\Controller\Admin\AdminAuthenticationController::login
+
+logout:
+  path: /logout
