@@ -67,3 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Tooltip.init(elems);
 });
 
+//@Tabs
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tabs');
+    var instance = M.Tabs.init(elems,
+        {
+            swipeable: false
+        });
+});
+

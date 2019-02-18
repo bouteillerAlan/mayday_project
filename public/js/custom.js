@@ -22,4 +22,3 @@ document.addEventListener('scroll', function() {
         btn.classList.add('hide');
     }
 });
-

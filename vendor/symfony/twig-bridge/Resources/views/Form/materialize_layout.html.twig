@@ -17,7 +17,7 @@
 {# @row #}
 {# put the row in the div.input-field #}
 {% block form_row %}
-        <div class="input-field">
+        <div class="input-field" {% if type is defined and type == 'range' %} style="margin-top:0" {% endif %}>
             {{ form_widget(form) }}
             {% if type is not defined or type not in ['file', 'range', 'hidden'] %}
                 {{ form_label(form) }}

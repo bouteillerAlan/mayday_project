@@ -137,7 +137,7 @@
 
             {% for data in result %}
                 <li>
-                    <a class="show" href="{{ path('blog.unique', {id: data.id, slug: data.slug}) }}">{{ data.title }}</a>
+                    <a class="show" href="{{ path('blog.unique', {id: data.id, slug: data.slug}) }}">{{ data.title|raw }}</a>
                 </li>
             {% endfor %}
 

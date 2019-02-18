@@ -42,3 +42,14 @@ App\Entity\BlogCategories:
           max: 255
       - NotBlank: ~
       - NotNull: ~
+
+App\Entity\BlogUser:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: username
+  properties:
+    username:
+      - NotBlank: ~
+      - NotNull: ~
+    password:
+      - NotBlank: ~
+      - NotNull: ~
