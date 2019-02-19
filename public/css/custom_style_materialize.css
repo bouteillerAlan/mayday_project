@@ -92,13 +92,13 @@ label[class*=active], label[class*=required] {
 }
 
 /* valid color */
-.input-field input[type=text].valid, textarea.materialize-textarea.valid, .input-field input[type=email].valid {
+.input-field input[type=text].valid, textarea.materialize-textarea.valid, .input-field input[type=email].valid, .input-field input[type=password].valid {
   border-bottom: 1px solid var(--green-neon) !important;
   box-shadow: 0 1px 0 0 var(--green-neon) !important;
 }
 
 /* invalid color */
-.input-field input[type=text].invalid, textarea.materialize-textarea.invalid, .input-field input[type=email].invalid {
+.input-field input[type=text].invalid, textarea.materialize-textarea.invalid, .input-field input[type=email].invalid, .input-field input[type=password].invalid {
   border-bottom: 1px solid var(--pink-neon) !important;
   box-shadow: 0 1px 0 0 var(--pink-neon) !important;
 }

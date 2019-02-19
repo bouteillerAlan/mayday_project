@@ -88,21 +88,57 @@
         </p>
 
         <h4>Skills/langages</h4>
+        <ul>
+            <li>Niveaux :
+                <span class="new badge home" data-badge-caption="Débutant"></span>
+                <span class="new badge home" data-badge-caption="Junior"></span>
+                <span class="new badge home" data-badge-caption="Confirmé"></span>
+                <span class="new badge home" data-badge-caption="Expert"></span>
+            </li>
+        </ul>
         <ul class="browser-default">
             <li>Français <span class="new badge home" data-badge-caption="Langue de naissance"></span></li>
             <li>Anglais <span class="new badge home" data-badge-caption="Niveau moyen"></span></li>
-            <li>HTML5/CSS3 <span class="new badge home" data-badge-caption="Great"></span></li>
-            <li>PHP7 <span class="new badge home" data-badge-caption="Good"></span></li>
-            <li>JavaScript <span class="new badge home" data-badge-caption="Nice"></span></li>
-            <li>Python <span class="new badge home" data-badge-caption="Meh"></span></li>
-            <li>POO <span class="new badge home" data-badge-caption="Meh"></span></li>
-            <li>SQL <span class="new badge home" data-badge-caption="Great"></span></li>
-            <li>REACT <span class="new badge home" data-badge-caption="interest"></span></li>
-            <li>JSX <span class="new badge home" data-badge-caption="interest"></span></li>
-            <li>Dart <span class="new badge home" data-badge-caption="interest"></span></li>
-            <li>Méthode Agile <span class="new badge home" data-badge-caption="Great"></span></li>
-            <li>Cycle de vie d'un projet <span class="new badge home" data-badge-caption="Good"></span></li>
-            <li>Principe de fonctionnement serveur/réseaux <span class="new badge home" data-badge-caption="Good"></span></li>
+
+            <li>Windows (xp, 7, 10, server) <span class="new badge home" data-badge-caption="Utilisation courante"></span></li>
+            <li>Linux (Debian) <span class="new badge home" data-badge-caption="Bonnes notions"></span></li>
+
+            <li>PHPStorm <span class="new badge home" data-badge-caption="Utilisation courante"></span></li>
+            <li>Git/GitHub <span class="new badge home" data-badge-caption="Utilisation courante"></span></li>
+            <li>GitKraken <span class="new badge home" data-badge-caption="Utilisation courante"></span></li>
+            <li>Composer <span class="new badge home" data-badge-caption="Utilisation courante"></span></li>
+
+            <li>Laragon <span class="new badge home" data-badge-caption="Utilisation courante"></span></li>
+
+            <li>HTML5/CSS3 <span class="new badge home" data-badge-caption="Confirmé"></span></li>
+
+            <li>JavaScript <span class="new badge home" data-badge-caption="Junior"></span></li>
+            <li>Python 3<span class="new badge home" data-badge-caption="Débutant"></span></li>
+
+            <li>PHP7 <span class="new badge home" data-badge-caption="Junior"></span></li>
+            <li>POO/Design pattern <span class="new badge home" data-badge-caption="Junior"></span></li>
+
+            <li>SQL <span class="new badge home" data-badge-caption="Confirmé"></span></li>
+            <li>MySQL <span class="new badge home" data-badge-caption="Utilisation courante"></span></li>
+            <li>PhpMyAdmin <span class="new badge home" data-badge-caption="Utilisation courante"></span></li>
+            <li>HeidiSql <span class="new badge home" data-badge-caption="Utilisation courante"></span></li>
+            <li>Oracle <span class="new badge home" data-badge-caption="Notions"></span></li>
+            <li>Oracle SQL Developer <span class="new badge home" data-badge-caption="Notions"></span></li>
+            <li>Teradata <span class="new badge home" data-badge-caption="Notions"></span></li>
+
+
+            <li>REACT <span class="new badge home" data-badge-caption="Intérêt"></span></li>
+            <li>JSX <span class="new badge home" data-badge-caption="Intérêt"></span></li>
+
+            <li>Dart <span class="new badge home" data-badge-caption="Intérêt"></span></li>
+
+            <li>Wordpress <span class="new badge home" data-badge-caption="Confirmé"></span></li>
+            <li>Symfony <span class="new badge home" data-badge-caption="Junior"></span></li>
+
+            <li>Méthode Agile <span class="new badge home" data-badge-caption="Confirmé"></span></li>
+            <li>Cycle de vie d'un projet <span class="new badge home" data-badge-caption="Confirmé"></span></li>
+            <li>Principe de fonctionnement serveur/réseaux <span class="new badge home" data-badge-caption="Confirmé"></span></li>
+
         </ul>
     </div>
 
@@ -129,8 +165,8 @@
     <div class="col s12 m4">
         <h4 class="title hide-on-small-only">Où est-il</h4>
         <h4 class="title-mobile show-on-small hide-on-med-and-up">Où est-il</h4>
-        <p>Le site est actuellement en refonte graphique total et en reconstruction même du côté du back!<br/>
-            En effet je souhaite passer tout le système de mon site sur Symfony et React.</p>
+        <p>Le site est actuellement en reconstruction même du côté du back!<br/>
+            En effet je souhaite passer tout le système de mon site sur une API Rest Symfony et React.</p>
         <p>Vous pouvez cependant retrouver les derniers billets de blog ici : </p>
         <!--POST-->
         <ul>
@@ -157,18 +193,27 @@
             <div class="col s12 m12">{{ form_row(form.email) }}</div>
             <div class="col s12 m12">{{ form_row(form.message) }}</div>
             <div class="col s12">
+
                 <button class="btn waves-effect waves-light" type="submit" name="action">Envoyer
                     <i class="material-icons right">send</i>
                 </button>
-                <p>
-                    {% if not form.vars.valid %}
-                        erreur
-                    {% endif %}
 
-                    {% for message in app.flashes('success') %}
-                        {{ message }}
-                    {% endfor %}
-                </p>
+                {% if not form.vars.valid %}
+                    <div class="col s12 red flash-card">
+                        <p class="valign-wrapper">
+                            <i class="material-icons">layers_clear</i>Il y a une erreur
+                        </p>
+                    </div>
+                {% endif %}
+
+                {% for message in app.flashes('success') %}
+                    <div class="col s12 green flash-card">
+                        <p class="valign-wrapper">
+                            <i class="material-icons">layers</i>{{ message }}
+                        </p>
+                    </div>
+                {% endfor %}
+
             </div>
         {{ form_end(form) }}
     </div>

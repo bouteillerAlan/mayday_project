@@ -33,6 +33,17 @@
 {% endblock checkbox_row %}
 
 {# @widget #}
+{# @error #}
+{%- block form_errors -%}
+    {%- if errors|length > 0 -%}
+        <span class="helper-text"
+            {%- for error in errors -%}
+                  data-error="{{ error.message }}"
+            {%- endfor -%}
+        </span>
+    {%- endif -%}
+{%- endblock form_errors -%}
+
 {# @input #}
 {% block form_widget_simple %}
     {% if type is not defined or type not in ['file', 'range', 'hidden'] %}
