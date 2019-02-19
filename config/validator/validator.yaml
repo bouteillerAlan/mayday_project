@@ -53,3 +53,21 @@ App\Entity\BlogUser:
     password:
       - NotBlank: ~
       - NotNull: ~
+
+App\Entity\Contact:
+  properties:
+    firstname:
+      - NotBlank: ~
+      - NotNull: ~
+    lastname:
+      - NotBlank: ~
+      - NotNull: ~
+    email:
+      - Email:
+          mode: html5
+          message: Email "{{ value }}" non valide.
+      - NotBlank: ~
+      - NotNull: ~
+    message:
+      - NotBlank: ~
+      - NotNull: ~

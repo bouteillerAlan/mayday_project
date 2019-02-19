@@ -4,8 +4,12 @@
  *
  */
 
+use App\Entity\Contact;
+use App\Form\ContactType;
+use App\Notification\ContactNotification;
 use App\Repository\BlogContentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends AbstractController {
@@ -24,13 +28,32 @@ class HomeController extends AbstractController {
         $this->blogcontent = $repo;
     }
 
-    public function index () :Response
+
+    /**
+     * @param Request $request
+     * @param ContactNotification $notification
+     * @return Response
+     */
+    public function index (Request $request, ContactNotification $notification) :Response
     {
         $result = $this->blogcontent->getAllValid();
 
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $notification->notifyByMail($contact);
+            $this->addFlash('success', 'Message envoyé!');
+            return $this->redirect('/#contact');
+        }
+
         return $this->render('pages/home.html.twig', [
-            'result' => $result
+            'result' => $result,
+            'form' => $form->createView()
         ]);
     }
+
+
 
 }

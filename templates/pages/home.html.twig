@@ -151,6 +151,26 @@
     <div class="col s12 m4">
         <h4 class="title hide-on-small-only">Pour un café, ou un projet!</h4>
         <h4 class="title-mobile show-on-small hide-on-med-and-up">Pour un café, ou un projet!</h4>
+        {{ form_start(form) }}
+            <div class="col s12 m6">{{ form_row(form.lastname) }}</div>
+            <div class="col s12 m6">{{ form_row(form.firstname) }}</div>
+            <div class="col s12 m12">{{ form_row(form.email) }}</div>
+            <div class="col s12 m12">{{ form_row(form.message) }}</div>
+            <div class="col s12">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Envoyer
+                    <i class="material-icons right">send</i>
+                </button>
+                <p>
+                    {% if not form.vars.valid %}
+                        erreur
+                    {% endif %}
+
+                    {% for message in app.flashes('success') %}
+                        {{ message }}
+                    {% endfor %}
+                </p>
+            </div>
+        {{ form_end(form) }}
     </div>
 
 </div>
