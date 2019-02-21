@@ -34,8 +34,9 @@
         <div class="col s12 divider pink-p"></div>
 
         <div class="col s12 right-align paramBlog">
-            <span class="badge art">{{ result.idCat }}</span>
-            <span class="badge art">{{ result.date }}</span>
+            <span class="badge art tooltipped" data-position="bottom" data-tooltip="Catégorie">{{ result.idcategorie.name }}</span>
+            <span class="badge art tooltipped" data-position="bottom" data-tooltip="Auteur">{{ result.author }}</span>
+            <span class="badge art tooltipped" data-position="bottom" data-tooltip="Parution">{{ result.date }}</span>
         </div>
 
         <div class="col s12 content">

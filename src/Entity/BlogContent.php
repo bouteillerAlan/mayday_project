@@ -21,11 +21,6 @@ class BlogContent
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $id_cat;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $status;
@@ -49,6 +44,12 @@ class BlogContent
      * @ORM\Column(type="string", length=50)
      */
     private $author;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\BlogCategories", inversedBy="blogContent_ids")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $id_categorie;
 
     /**
      * BlogContent constructor.
@@ -78,18 +79,6 @@ class BlogContent
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getIdCat(): ?int
-    {
-        return $this->id_cat;
-    }
-
-    public function setIdCat(int $id_cat): self
-    {
-        $this->id_cat = $id_cat;
-
-        return $this;
     }
 
     public function getStatus(): ?bool
@@ -148,6 +137,18 @@ class BlogContent
     public function setAuthor(string $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getIdCategorie(): ?BlogCategories
+    {
+        return $this->id_categorie;
+    }
+
+    public function setIdCategorie(?BlogCategories $id_categorie): self
+    {
+        $this->id_categorie = $id_categorie;
 
         return $this;
     }

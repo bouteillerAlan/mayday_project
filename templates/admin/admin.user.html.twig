@@ -28,7 +28,7 @@
                 <tr>
                     <th>Name</th>
                     <th><a href="{{ path('admin.user.new') }}" class="waves-effect waves-light btn-small">Nouveau<i class="material-icons left">add_to_photos</i></a></th>
-                    <th rowspan="2"></th>
+                    <!--th rowspan="2"></th-->
                 </tr>
                 </thead>
 
@@ -36,9 +36,9 @@
                 {% for data in result %}
                     <tr>
                         <td>{{ data.username }}</td>
-                        <td>
-                            <a href="#" class="waves-effect waves-light btn-small green">Modifier<i class="material-icons left">burst_mode</i></a>
-                        </td>
+                        <!--td>
+                            <a href="{{ path('admin.user.edit', {id: data.id}) }}" class="waves-effect waves-light btn-small green">Modifier<i class="material-icons left">burst_mode</i></a>
+                        </td-->
                         <td>
                             <form method="post" action="{{ path('admin.user.delete', {id: data.id}) }}" onsubmit="return confirm('Etes-vous sur de vouloir supprimer l\'utilisateur {{data.username}}')">
                                 <input type="hidden" name="_method" value="delete">
