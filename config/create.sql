@@ -32,19 +32,18 @@ INSERT INTO `blog_categories` (`id`, `name`, `img`) VALUES
 /*blog_content*/
 CREATE TABLE `blog_content` (
                               `id` INT(11) NOT NULL AUTO_INCREMENT,
-                              `id_cat` INT(11) NOT NULL,
+                              `id_categorie_id` INT(11) NOT NULL,
                               `status` TINYINT(1) NOT NULL,
                               `created_at` DATETIME NOT NULL,
                               `title` VARCHAR(255) NOT NULL,
                               `content` LONGTEXT NOT NULL,
                               `author` VARCHAR(50) NOT NULL,
-                              `id_categorie_id` INT(11) NOT NULL,
                               PRIMARY KEY (`id`),
                               INDEX `IDX_12338D2A9F34925F` (`id_categorie_id`),
                               CONSTRAINT `FK_12338D2A9F34925F` FOREIGN KEY (`id_categorie_id`) REFERENCES `blog_categories` (`id`)
 );
 
-INSERT INTO `blog_content` (`id`, `id_cat`, `status`, `created_at`, `title`, `content`, `author`) VALUES
+INSERT INTO `blog_content` (`id`, `id_categorie_id`, `status`, `created_at`, `title`, `content`, `author`) VALUES
 (1, 5, 1, '2019-02-13 16:50:39', 'Utilisation de DBMS_CRYPTO.HASH', '<p>DBMS_CRYPTO.HASH ce pr&eacute;sente comme ceci :&nbsp;</p>\r\n\r\n<pre class="line-numbers">\r\n<code class="language-sql">DBMS_CRYPTO.Hash (\r\n   src IN RAW,\r\n   typ IN PLS_INTEGER\r\n)\r\n\r\nRETURN RAW;</code></pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><u><strong>Exemple&nbsp;:</strong></u> convertir la colonne DATA de la table TABLE en donn&eacute;e hach&eacute; en SHA_2 sur 256 bits.</p>\r\n\r\n<p>1 &ndash; R&eacute;cup&eacute;ration de la valeur du type de cryptage en PLS INTEGER</p>\r\n\r\n<pre class="line-numbers">\r\n<code class="language-sql">/*Activation de l\'affichage des messages via put_line*/\r\n/*je récupére le hash_256 au format pl/sql*/\r\n\r\nset serveroutput on;\r\nbegin\r\ndbms_output.put_line(dbms_crypto.hash_sh256);\r\nend;</code></pre>\r\n\r\n<p>Ce qui donne&nbsp;: 4</p>\r\n\r\n<p><br />\r\n2 &ndash; On transforme DATA en RAW directement dans la requ&ecirc;te en pr&eacute;cisant le type de conversion voulue (ici hash_sh256 donc en pls integer 4)&nbsp;:</p>\r\n\r\n<pre class="line-numbers">\r\n<code class="language-sql">SELECT DBMS_CRYPTO.Hash(UTL_RAW.CAST_TO_RAW (DATA), 4) from TABLE;</code></pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>exemple de r&eacute;sultat :&nbsp;</p>\r\n\r\n<p>473287F8298DBA7163A897908958F7C0EAE733E25D2E027992EA2EDC9BED2FA8</p>\r\n\r\n<p>&nbsp;</p>', 'Hadock'),
 (2, 1, 1, '2019-02-13 16:50:39', 'Contenu du &quot;Citizencon Digital Goodies Pack&quot;', '<p>La citizencon finit nous avons pu d&eacute;couvrir la contenu&nbsp;du pack (que les Imperator ont re&ccedil;u gratuitement) :</p>\r\n\r\n<p><img alt="contenue du citizencon pack" class="materialboxed responsive-img" src="http://libercodex.com/img/citizenconpack.jpg" title="Digital Goodies du Citizencon" /></p>\r\n', 'Hadock'),
 (3, 1, 1, '2019-02-13 16:50:39', 'Afficher les statistiques du jeu', '<p>Une fois en jeu :&nbsp;</p>\r\n\r\n<ol>\r\n	<li>appuyez sur la touche &sup2;</li>\r\n	<li>entrez la commande : r_DisplayInfo = 3</li>\r\n</ol>\r\n\r\n<p><span style="color:#e74c3c">Il se peut que certaines informations, comme votre adresse IP, apparaisse &agrave;&nbsp;l&#39;&eacute;cran durant la manipulation ou apr&egrave;s.</span></p>\r\n', 'Hadock'),
