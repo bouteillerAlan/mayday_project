@@ -42,6 +42,11 @@ admin.user.new:
   path: /admin/new-user-entry
   controller: App\Controller\Admin\AdminUserController::new
 
+admin.user.edit: #not work - dispatch to index
+  path: /admin/user
+  controller: App\Controller\Admin\AdminUserController::index
+  methods: [GET, POST]
+
 admin.user.delete:
   path: /admin/modif-{id}
   controller: App\Controller\Admin\AdminUserController::delete

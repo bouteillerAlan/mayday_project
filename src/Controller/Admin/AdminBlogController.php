@@ -4,6 +4,7 @@
  *
  */
 
+use App\Entity\BlogCategories;
 use App\Entity\BlogContent;
 use App\Form\BlogContentType;
 use App\Repository\BlogContentRepository;

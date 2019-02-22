@@ -25,11 +25,32 @@ class BlogContentRepository extends ServiceEntityRepository
     public function getAllValid ()
     {
         return $this->createQueryBuilder('b')
+            ->join('b.id_categorie', 'c')->addSelect('c')
             ->where('b.status = :val')
             ->setParameter('val', true)
             ->orderBy('b.id', 'DESC')
             ->getQuery()
             ->getResult();
+
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function getOneValid ($id)
+    {
+        return $this->createQueryBuilder('b')
+            ->join('b.id_categorie', 'c')->addSelect('c')
+            ->where('b.status = :val')
+            ->andWhere('b.id = :id')
+            ->setParameter('val', true)
+            ->setParameter('id', $id)
+            ->orderBy('b.id', 'DESC')
+            ->getQuery()
+            ->getOneOrNullResult();
+
     }
 
 }

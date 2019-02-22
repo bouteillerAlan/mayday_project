@@ -25,6 +25,12 @@ class BlogController extends AbstractController {
         $this->blogcontent = $repo;
     }
 
+    /**
+     * @param BlogContent $entity
+     * @param string $slug
+     * @return Response
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
     public function unique (BlogContent $entity, string $slug) :Response
     {
         if ($entity->getSlug() !== $slug) {
@@ -34,8 +40,14 @@ class BlogController extends AbstractController {
             ], 301);
         }
 
+        $result = $this->blogcontent->getOneValid($entity->getId());
+
+        if (!$result) {
+            return $this->redirectToRoute('home');
+        }
+
         return $this->render('blog/unique.html.twig', [
-            'result' => $entity
+            'result' => $result
         ]);
     }
 
