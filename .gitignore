@@ -6,8 +6,10 @@
 /var/
 /.*
 /.idea/
+
 !vendor
 !.gitignore
+!.env
 
 ###> symfony/phpunit-bridge ###
 .phpunit
