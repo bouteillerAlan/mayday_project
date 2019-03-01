@@ -1,22 +1,30 @@
-###> symfony/framework-bundle ###
+#####################
+#   up 01/03/18     #
+#   abou            #
+#####################
+
+!.gitignore
+
+#phpstorm project folder
+/.idea/
+
+#no ssh/composer in my ovh server
+!vendor
+
+#symfony/framework-bundle
 /.env.local
 /.env.local.php
 /.env.*.local
 /public/bundles/
 /var/
 /.*
-/.idea/
 
-.env.local
-.*
-!vendor
-!.gitignore
+#Logs
+!var/log/.gitkeep
 
-###> symfony/phpunit-bridge ###
+#symfony/phpunit-bridge
 .phpunit
 /phpunit.xml
-###< symfony/phpunit-bridge ###
 
-###> symfony/web-server-bundle ###
+#symfony/web-server-bundle
 /.web-server-pid
-###< symfony/web-server-bundle ###
