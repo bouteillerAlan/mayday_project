@@ -39,10 +39,27 @@
             <span class="badge art tooltipped" data-position="bottom" data-tooltip="Parution">{{ result.date }}</span>
         </div>
 
-        <div class="col s12 content">
-            {{ result.content|raw }}
-        </div>
+        <textarea id="markdown-input" style="display: none">{{ result.content|raw }}</textarea>
+        <div class="col s12 content" id="markdown-output"></div>
 
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var output = document.getElementById('markdown-output');
+            var input = document.getElementById('markdown-input');
+
+            output.innerHTML = marked(input.value, {
+                gfm: true,
+                tables: true,
+                headerIds: true
+            });
+
+            Prism.highlightAllUnder(output);
+        });
+    </script>
 {% endblock %}

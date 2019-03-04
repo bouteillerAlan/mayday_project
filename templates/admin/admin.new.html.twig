@@ -24,12 +24,17 @@
                 <div class="col m6 s12">{{ form_row(form.id_categorie) }}</div>
                 <div class="col m6 s12">{{ form_row(form.author) }}</div>
                 <div class="col s12">{{ form_row(form.title) }}</div>
-                <div id="editor" class="col s12">{{ form_row(form.content, {'label': false}) }}</div>
+                <div class="col s12" id="markdown-input">{{ form_row(form.content) }}</div>
+
+                <div class="col s12 divider pink-p divider-bottom"></div>
+
+                <div class="col s12" id="markdown-output"></div>
 
                 <div class="col s12 divider pink-p divider-bottom"></div>
 
                 <div class="col s12 paramBlog">
-                    <div>{{ form_row(form.status, {'type': 'radio'}) }}</div>
+                    <div>{{ form_row(form.status) }}</div>
+                    <div>{{ form_row(form.type) }}</div>
                     <div>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Enregistrer
                             <i class="material-icons right">send</i>
@@ -45,10 +50,19 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="../ckeditor4/ckeditor.js"></script>
-    <!--@replace the textarea with ckeditor-->
-    <script>
-        $editor = document.querySelector( '.materialize-textarea' );
-        CKEDITOR.replace($editor);
+    <script type="text/javascript">
+        document.getElementById('blog_content_content').addEventListener("keyup", function () {
+
+            var output = document.getElementById('markdown-output');
+            var input = document.getElementById('blog_content_content');
+
+            output.innerHTML = marked(input.value, {
+                gfm: true,
+                tables: true,
+                headerIds: true
+            });
+
+            Prism.highlightAllUnder(output);
+        });
     </script>
 {% endblock %}

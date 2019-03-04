@@ -26,6 +26,11 @@ class BlogContent
     private $status;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $type;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $created_at;
@@ -74,6 +79,14 @@ class BlogContent
     public function getDate() :string
     {
         return $this->getCreatedAt()->format('d-m-Y');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 
     public function getId(): ?int
@@ -152,4 +165,15 @@ class BlogContent
 
         return $this;
     }
+
+    /**
+     * @param mixed $type
+     * @return BlogContent
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+        return $this;
+    }
+
 }

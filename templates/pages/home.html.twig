@@ -157,21 +157,42 @@
         <p>Mes notes sont juste la retranscription "informatique" et "en ligne" de celles que j'ai prise lors d'un cours, mooc, ou apprentissage.</p>
         <h4>Le blog</h4>
         <p>Le blog me permet de noter des solutions à certains problèmes rencontrés ou encore d'écrire des petits textes très courts sur des actualités qui m'intéresse ou d'en faire un signalement.</p>
+        <h4>Evolution</h4>
+        <p>Le site est actuellement en reconstruction même du côté du back!<br/>
+            En effet je souhaite passer tout le système de mon site sur une API Rest Symfony et React.</p>
+        <p>Actuellement j'utilise <a href="https://symfony.com/4" class="show" target="_blank">Symfony 4</a> pour la structure, <a href="https://github.com/markedjs/marked" class="show" target="_blank">Marked.js</a> pour l'édition des notes ou billets de blog,
+            <a href="https://prismjs.com/" class="show" target="_blank">PrismJs</a> pour la colorisation syntaxsique, <a href="https://materializecss.com/" class="show" target="_blank">Materialize</a> pour le style.</p>
     </div>
 
     <div class="col offset-m2 m4 right-align scrollspy" id="blog">
-        <h3 class="yellowP">Blog/Notes</h3>
+        <h3 class="yellowP">Blog</h3>
     </div>
     <div class="col s12 m4">
-        <h4 class="title hide-on-small-only">Où est-il</h4>
-        <h4 class="title-mobile show-on-small hide-on-med-and-up">Où est-il</h4>
-        <p>Le site est actuellement en reconstruction même du côté du back!<br/>
-            En effet je souhaite passer tout le système de mon site sur une API Rest Symfony et React.</p>
-        <p>Vous pouvez cependant retrouver les derniers billets de blog ici : </p>
+        <h4 class="title hide-on-small-only">Dernier billet</h4>
+        <h4 class="title-mobile show-on-small hide-on-med-and-up">Dernier billet</h4>
         <!--POST-->
         <ul>
 
-            {% for data in result %}
+            {% for data in blog %}
+                <li>
+                    <a class="show" href="{{ path('blog.unique', {id: data.id, slug: data.slug}) }}">{{ data.title|raw }}</a>
+                </li>
+            {% endfor %}
+
+        </ul>
+        <!--POST END-->
+    </div>
+
+    <div class="col offset-m2 m4 right-align scrollspy" id="note">
+        <h3 class="yellowP">Notes</h3>
+    </div>
+    <div class="col s12 m4">
+        <h4 class="title hide-on-small-only">Mes notes</h4>
+        <h4 class="title-mobile show-on-small hide-on-med-and-up">Derniéres notes</h4>
+        <!--POST-->
+        <ul>
+
+            {% for data in note %}
                 <li>
                     <a class="show" href="{{ path('blog.unique', {id: data.id, slug: data.slug}) }}">{{ data.title|raw }}</a>
                 </li>

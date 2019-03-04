@@ -7,10 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method BlogContent|null find($id, $lockMode = null, $lockVersion = null)
- * @method BlogContent|null findOneBy(array $criteria, array $orderBy = null)
- * @method BlogContent[]    findAll()
- * @method BlogContent[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * Class BlogContentRepository
+ * @package App\Repository
  */
 class BlogContentRepository extends ServiceEntityRepository
 {
@@ -20,14 +18,22 @@ class BlogContentRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return BlogContent[] return an array of BlogContent
+     * @param string $type
+     * @return mixed
      */
-    public function getAllValid ()
+    public function getAllValid ($type = 'blog')
     {
+        if ($type == 'note') {
+            $type = 1;
+        } else {
+            $type = 0;
+        }
         return $this->createQueryBuilder('b')
             ->join('b.id_categorie', 'c')->addSelect('c')
             ->where('b.status = :val')
+            ->andWhere('b.type = :type')
             ->setParameter('val', true)
+            ->setParameter('type', $type)
             ->orderBy('b.id', 'DESC')
             ->getQuery()
             ->getResult();

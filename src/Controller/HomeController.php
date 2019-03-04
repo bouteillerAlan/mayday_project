@@ -1,9 +1,5 @@
 <?php namespace App\Controller;
 
-/*
- *
- */
-
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Notification\ContactNotification;
@@ -12,6 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class HomeController
+ * @package App\Controller
+ */
 class HomeController extends AbstractController {
 
     /**
@@ -36,7 +36,8 @@ class HomeController extends AbstractController {
      */
     public function index (Request $request, ContactNotification $notification) :Response
     {
-        $result = $this->blogcontent->getAllValid();
+        $blog = $this->blogcontent->getAllValid('blog');
+        $note = $this->blogcontent->getAllValid('note');
 
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -49,7 +50,8 @@ class HomeController extends AbstractController {
         }
 
         return $this->render('pages/home.html.twig', [
-            'result' => $result,
+            'blog' => $blog,
+            'note' => $note,
             'form' => $form->createView()
         ]);
     }
