@@ -1,13 +1,17 @@
+# content
 Id cat : Catégorie
-Status : Mise en ligne
 Title : Titre
 Content : Contenue
 Author : Auteur
+Status : Mise en ligne
+Type : Ce n'est pas un billet de blog
+# user
 Username : Nom d'utilisateur
 Password : Mot de passe
+# contact
 Lastname : Nom
 Firstname : Prénom
 Email : Mail
 Message : Message
 Id categorie : Catégorie
-Type : Ce n'est pas un billet de blog
+Data : Pour envoyer votre message vous acceptez de nous transmettre les informations rentrées dans le formulaire de contact. Votre adresse de messagerie est uniquement utilisée pour vous répondre.

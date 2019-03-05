@@ -7,6 +7,11 @@ class Contact
 {
 
     /**
+     * @var boolean $data
+     */
+    private $data;
+
+    /**
      * @var string $email
      */
     private $email;
@@ -96,6 +101,24 @@ class Contact
     public function getMessage()
     {
         return $this->message;
+    }
+
+    /**
+     * @param $data
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->data = $data;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getData()
+    {
+        return $this->data;
     }
 
 
