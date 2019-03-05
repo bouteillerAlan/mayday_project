@@ -18,9 +18,7 @@ class ContactType extends AbstractType
             ->add('lastname', TextType::class)
             ->add('email', EmailType::class)
             ->add('message', TextareaType::class)
-            ->add('data', CheckboxType::class, [
-                'required' => true
-            ]);
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
