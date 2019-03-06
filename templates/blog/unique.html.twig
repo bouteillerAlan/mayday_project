@@ -60,6 +60,18 @@
             });
 
             Prism.highlightAllUnder(output);
+
+            for (a=0; a<links.length; a++) {
+                links[a].classList.add('show');
+            }
+
+            for (a=0; a<imgs.length; a++) {
+                imgs[a].classList.add('materialboxed');
+                imgs[a].classList.add('responsive-img');
+            }
+
+            var elems = document.querySelectorAll('.materialboxed');
+            var instances = M.Materialbox.init(elems);
         });
     </script>
 {% endblock %}

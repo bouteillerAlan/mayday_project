@@ -57,6 +57,7 @@
                     <th>Name</th>
                     <th>Date de création</th>
                     <th>Status</th>
+                    <th>Type</th>
                     <th><a href="{{ path('admin.unique.new') }}" class="waves-effect waves-light btn-small">Nouveau<i class="material-icons left">add_to_photos</i></a></th>
                     <th rowspan="2"></th>
                 </tr>
@@ -67,7 +68,8 @@
                     <tr>
                         <td><a href="{{ path('blog.unique', {id: data.id, slug: data.slug}) }}" target="_blank">{{ data.title|raw }}</a></td>
                         <td>{{ data.date }}</td>
-                        <td>{{ data.status }}</td>
+                        <td>{% if data.status == true %} <i class="material-icons">check</i> {% elseif data.status == false %} <i class="material-icons">close</i> {% endif %}</td>
+                        <td>{% if data.type == true %} <i class="material-icons">description</i> {% elseif data.type == false %} <i class="material-icons">comment</i> {% endif %}</td>
                         <td>
                             <a href="{{ path('admin.unique.edit', {id: data.id, slug: data.slug}) }}" class="waves-effect waves-light btn-small green">Modifier<i class="material-icons left">burst_mode</i></a>
                         </td>
