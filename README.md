@@ -14,3 +14,10 @@ Modify the .gitignore file for the ssh deploy
 
 - keep vendor/symfony/twig-bridge/Resources/views/Form/materialize_layout.html.twig
 - remove /vendor
+
+
+**afc0e83dc2ca5c62d90f4b75c9cf4df5b7023b4e**
+
+Modify the .htaccess file for the .dev expectation
+
+- the .dev domain name work only with https
