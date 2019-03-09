@@ -5,6 +5,9 @@
 
 !.gitignore
 
+#personal files
+*.xlsx
+
 #phpstorm project folder
 /.idea/
 
