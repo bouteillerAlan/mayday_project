@@ -6,7 +6,7 @@
 !.gitignore
 
 #personal files
-*.xlsx
+bdd.xlsx
 
 #phpstorm project folder
 /.idea/
