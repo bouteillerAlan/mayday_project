@@ -8,14 +8,15 @@
 #phpstorm project folder
 /.idea/
 
-#no ssh/composer in my ovh server
-!vendor
+#personal template
+!vendor/symfony/twig-bridge/Resources/views/Form/materialize_layout.html.twig
 
 #symfony/framework-bundle
 /.env.local
 /.env.local.php
 /.env.*.local
 /public/bundles/
+/vendor
 /var/
 /.*
 
