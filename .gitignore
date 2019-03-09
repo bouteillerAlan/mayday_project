@@ -8,9 +8,6 @@
 #phpstorm project folder
 /.idea/
 
-#personal template
-!vendor/symfony/twig-bridge/Resources/views/Form/materialize_layout.html.twig
-
 #symfony/framework-bundle
 /.env.local
 /.env.local.php
@@ -22,6 +19,9 @@
 
 #Logs
 !var/log/.gitkeep
+
+#personal template
+!vendor/symfony/twig-bridge/Resources/views/Form/materialize_layout.html.twig
 
 #symfony/phpunit-bridge
 .phpunit
